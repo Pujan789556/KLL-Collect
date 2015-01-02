@@ -14,7 +14,7 @@
         </intent>
     </Preference>
 
-    <com.geoodk.collect.android.preferences.PasswordDialogPreference
+    <com.kll.collect.android.preferences.PasswordDialogPreference
         android:id="@+id/admin_pw"
         android:defaultValue=""
         android:dialogTitle="Change Admin Password"
