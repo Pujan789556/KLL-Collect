@@ -48,7 +48,7 @@ public class Collect extends Application {
 	private static final String t = "temp";
     // Storage paths
     public static final String ODK_ROOT = Environment.getExternalStorageDirectory()
-            + File.separator + "geoodk";
+            + File.separator + "kllcollect";
     public static final String FORMS_PATH = ODK_ROOT + File.separator + "forms";
     public static final String INSTANCES_PATH = ODK_ROOT + File.separator + "instances";
     public static final String CACHE_PATH = ODK_ROOT + File.separator + ".cache";

@@ -127,6 +127,22 @@
             android:summary="@string/found_in_settings"
             android:title="@string/show_splash" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Save Name From Form:">
+        <CheckBoxPreference
+            android:id="@+id/savename_from_input"
+            android:defaultValue="false"
+            android:key="savename_from_input"
+            android:summary="Check to specify surveyors input as default save name"
+            android:title="Get Default save name from Surveyor Input"
+            />
+        <EditTextPreference
+            android:dependency="savename_from_input"
+            android:id="@+id/defaultsave_field"
+            android:key="defaultsave_field"
+            android:title="What do you want to use as default save name?"
+            />
+
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/user_access_form_entry" >
         <CheckBoxPreference
             android:id="@+id/access_settings"

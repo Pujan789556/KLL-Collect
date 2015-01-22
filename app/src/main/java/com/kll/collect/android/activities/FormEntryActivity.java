@@ -16,17 +16,26 @@ package com.kll.collect.android.activities;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 
+import org.apache.commons.io.IOUtils;
 import org.javarosa.core.model.FormIndex;
 import org.javarosa.core.model.data.IAnswerData;
+import org.javarosa.core.services.transport.payload.ByteArrayPayload;
 import org.javarosa.form.api.FormEntryCaption;
 import org.javarosa.form.api.FormEntryController;
 import org.javarosa.form.api.FormEntryPrompt;
 import org.javarosa.model.xform.XFormsModule;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
 import com.kll.collect.android.R;
 
 import com.kll.collect.android.application.Collect;
@@ -1086,6 +1095,9 @@ public class FormEntryActivity extends Activity implements AnimationListener,
 				instanceComplete.setVisibility(View.GONE);
 			}
 
+
+
+
 			// edittext to change the displayed name of the instance
 			final EditText saveAs = (EditText) endView
 					.findViewById(R.id.save_name);
@@ -1103,8 +1115,7 @@ public class FormEntryActivity extends Activity implements AnimationListener,
 				}
 			};
 			saveAs.setFilters(new InputFilter[] { returnFilter });
-
-			String saveName = formController.getSubmissionMetadata().instanceName;
+            String saveName = getSaveName();
 			if (saveName == null) {
 				// no meta/instanceName field in the form -- see if we have a
 				// name for this instance from a previous save attempt...
@@ -1248,6 +1259,90 @@ public class FormEntryActivity extends Activity implements AnimationListener,
             return createView(event, advancingPage);
 		}
 	}
+
+
+    public String getSaveName() {
+        //TODO
+        FormController formController = Collect.getInstance()
+                .getFormController();
+        String saveName = formController.getSubmissionMetadata().instanceName;
+        if(mAdminPreferences.getBoolean("savename_from_input",false)) {
+            if(!mAdminPreferences.getString("defaultsave_field","").equals("")) {
+                try {
+                    ByteArrayPayload submissionXml = formController.getSubmissionXml();
+                    InputStream submissionInput = submissionXml.getPayloadStream();
+                    XmlPullParserFactory xmlFactoryObject = XmlPullParserFactory.newInstance();
+                    XmlPullParser myparser = xmlFactoryObject.newPullParser();
+                    myparser.setInput(new StringReader(IOUtils.toString(submissionInput, "UTF-8")));
+                    Log.i("SAVENAME_SUBMISSION", IOUtils.toString(submissionInput, "UTF-8"));
+                    saveName = parseSaveName(mAdminPreferences.getString("defaultsave_field", ""), myparser, formController.getSubmissionMetadata().instanceName);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (XmlPullParserException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return saveName;
+    }
+
+    public String parseSaveName(String valuesToGet, XmlPullParser xmlToParse, String defaultValue){
+        String saveName = "";
+        String[] fields = valuesToGet.split("\\s+");
+        System.out.println(xmlToParse.getAttributeCount());
+        for (int i=0; i < fields.length; i++){
+            String userinput = getValueFromXML(xmlToParse,fields[i]);
+            Log.i("PARSINGKEY",fields[i]);
+            if (userinput != null) {
+                saveName = saveName + fields[i] + ": " + userinput + " ";
+            }
+
+        }
+        if (saveName.equals("")){
+            saveName = defaultValue;
+        }
+
+
+        return saveName;
+    }
+
+    public String getValueFromXML(XmlPullParser xml, String key){
+        String result = null;
+        try {
+            int event = xml.getEventType();
+            String text = null;
+
+            while (event != XmlPullParser.END_DOCUMENT)
+            {
+                String tag = xml.getName();
+                if (tag != null) {
+                    System.out.println(tag);
+                }else{
+                    System.out.println("Null Tag");
+                }
+
+                switch (event){
+                    case XmlPullParser.START_TAG:
+                        break;
+                    case XmlPullParser.TEXT:
+                        text = xml.getText();
+                        break;
+                    case XmlPullParser.END_TAG:
+                        if(tag.equals(key)){
+                            System.out.println("Match Found");
+                            result = text;
+                            System.out.println(result);
+                        }
+                        break;
+                }
+                event = xml.next();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent mv) {

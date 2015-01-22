@@ -121,7 +121,7 @@ public class DownloadFormsTask extends
                 // do not download additional forms.
                 break;
             } catch (Exception e) {
-                Log.e(t, e.getMessage());
+                //Log.e(t, e.getMessage());
 
                 if (e.getCause() != null) {
                     message += e.getCause().getMessage();
