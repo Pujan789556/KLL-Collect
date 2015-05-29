@@ -135,6 +135,7 @@
     <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <string name="app_name" translatable="false">KLL Collect</string>
+    <string name="app_name_long" translatable="false">KLL Collect</string>
     <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_url">http://kathmandulivinglabs.org</string>
@@ -178,7 +179,7 @@
     <string name="clear_answer_ask">Remove This Response?</string>
     <string name="clear_answer_no">Cancel</string>
     <string name="clearanswer_confirm">Remove the response to \"%s\"?</string>
-    <string name="click_to_web">Tap to visit http://kathmandulivinglabs.org</string>
+    <string name="click_to_web">Tap to visit http://openstreetmap.org</string>
     <string name="client">User Interface</string>
     <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_strings.xml -->
     <eat-comment/>
@@ -241,7 +242,7 @@
     <string name="default_oflinelayers_url">OfflineLayers</string>
     <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
-    <string name="default_server_url" translatable="false">http://ona.io/ktmlabs</string>
+    <string name="default_server_url" translatable="false">http://ona.io/nea6754</string>
     <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="default_splash_path">GeoODK Default</string>
