@@ -50,6 +50,8 @@ public class Collect extends Application {
     public static final String ODK_ROOT = Environment.getExternalStorageDirectory()
             + File.separator + "kllcollect";
     public static final String FORMS_PATH = ODK_ROOT + File.separator + "forms";
+    public static final String TEMP_FORMS_PATH = ODK_ROOT + File.separator + "temp";
+
     public static final String INSTANCES_PATH = ODK_ROOT + File.separator + "instances";
     public static final String CACHE_PATH = ODK_ROOT + File.separator + ".cache";
     public static final String METADATA_PATH = ODK_ROOT + File.separator + "metadata";
@@ -130,7 +132,7 @@ public class Collect extends Application {
         }
 
         String[] dirs = {
-                ODK_ROOT, FORMS_PATH, INSTANCES_PATH, CACHE_PATH, METADATA_PATH,OFFLINE_LAYERS
+                ODK_ROOT, FORMS_PATH, INSTANCES_PATH, CACHE_PATH, METADATA_PATH,OFFLINE_LAYERS,TEMP_FORMS_PATH
         };
 
         for (String dirName : dirs) {

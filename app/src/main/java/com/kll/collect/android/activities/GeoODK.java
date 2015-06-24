@@ -26,48 +26,71 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.prefs.Preferences;
 
 import com.kll.collect.android.R;
 import com.kll.collect.android.application.Collect;
+import com.kll.collect.android.preferences.AdminPreferencesActivity;
+import com.kll.collect.android.preferences.PreferencesActivity;
+import com.kll.collect.android.preferences.ServerPreferenceActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+
+import android.text.LoginFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class GeoODK extends Activity {
+import android.preference.CheckBoxPreference;
+import android.preference.EditTextPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
+
+public class GeoODK extends Activity  {
 	private static final String t = "GeoODK";
 	private static boolean EXIT = true;
 	private AlertDialog mAlertDialog;
 	private String[] assestFormList;
-
+	private EditTextPreference mServerUrlPreference;
+	private String serverURL;
 	
     public static final String FORMS_PATH = Collect.ODK_ROOT + File.separator + "forms";
-	
+
+	public static final String KEY_SERVER_URL = "server_url";
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.geoodk_layout);
-        
-        //Create the files and directorys
-        
-        Log.i(t, "Starting up, creating directories");
+
+
+
+		Log.i(t, "Starting up, creating directories");
 		try {
 			Collect.createODKDirs();
 		} catch (RuntimeException e) {
 			createErrorDialog(e.getMessage(), EXIT);
 			return;
 		}
-		assestFormList = getAssetFormList();
+ 		assestFormList = getAssetFormList();
 		copyForms(assestFormList);
-		
-		
+
+
+
 		ImageButton geoodk_collect_button = (ImageButton) findViewById(R.id.geoodk_collect_butt);
         geoodk_collect_button.setOnClickListener(new View.OnClickListener() {
 		    public void onClick(View v) {
@@ -88,25 +111,78 @@ public class GeoODK extends Activity {
 				startActivity(i);
 			}
 		});
-		ImageButton geoodk_map_but = (ImageButton) findViewById(R.id.geoodk_map_butt);
-		geoodk_map_but.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
+		ImageButton geoodk_get_survey = (ImageButton) findViewById(R.id.geoodk_get_survey_butt);
+		geoodk_get_survey.setOnClickListener(new View.OnClickListener() {
+
+		@Override
 			public void onClick(View v) {
 				Collect.getInstance().getActivityLogger()
-						.logAction(this, "map_data", "click");
-				Intent i = new Intent(getApplicationContext(),
-						OSM_Map.class);
-				startActivity(i);
+						.logAction(this, "get_survey", "click");
+				AlertDialog.Builder builder = new AlertDialog.Builder(GeoODK.this);
+				builder.setTitle("Confirm Update Form");
+				builder.setMessage("Forms will be replaced");
+				builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						SharedPreferences settings =
+								PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+						String server =
+								settings.getString(PreferencesActivity.KEY_SERVER_URL,
+										getString(R.string.default_server_url));
+						Log.i("URL", server);
+						if (server.equals("")) {
+							Intent i = new Intent(getApplicationContext(), ServerPreferenceActivity.class);
+							startActivity(i);
+						} else {
+							Intent i = new Intent(getApplicationContext(), FormUpdateList.class);
+							startActivity(i);
+						}
+					}
+				});
+			builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			AlertDialog alert = builder.create();
+			alert.show();
+			}
+		});
+		geoodk_get_survey.setOnLongClickListener(new View.OnLongClickListener() {
+
+			@Override
+			public boolean onLongClick(View v) {
+				Collect.getInstance().getActivityLogger()
+						.logAction(this, "get_survey", "click");
+				SharedPreferences settings =
+						PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+				String server =
+						settings.getString(PreferencesActivity.KEY_SERVER_URL,
+								getString(R.string.default_server_url));
+				Log.i("URL", server);
+				if(server.equals("")) {
+					Intent i = new Intent(getApplicationContext(),ServerPreferenceActivity.class);
+					startActivity(i);
+				}else{
+					Intent i = new Intent(getApplicationContext(),FormDownloadList.class);
+					startActivity(i);
+
+				}
+				return true;
 			}
 		});
 		
 		ImageButton geoodk_settings_but = (ImageButton) findViewById(R.id.geoodk_settings_butt);
 		geoodk_settings_but.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+
 				Collect.getInstance()
 				.getActivityLogger()
 				.logAction(this,"Main_Settings","click");
+
+
+
 				Intent ig = new Intent( getApplicationContext(), MainSettingsActivity.class);
 						startActivity(ig);
 			}

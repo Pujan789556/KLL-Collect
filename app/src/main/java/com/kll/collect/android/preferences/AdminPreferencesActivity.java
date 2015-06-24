@@ -55,7 +55,7 @@ public class AdminPreferencesActivity extends PreferenceActivity {
     public static String KEY_DELETE_SAVED = "delete_saved";
     // server
     public static String KEY_CHANGE_URL = "change_url";
-    public static String KEY_CHANGE_SERVER = "change_server";
+   	public static String KEY_CHANGE_SERVER = "change_server";
     public static String KEY_CHANGE_USERNAME = "change_username";
     public static String KEY_CHANGE_PASSWORD = "change_password";
     public static String KEY_CHANGE_GOOGLE_ACCOUNT = "change_google_account";

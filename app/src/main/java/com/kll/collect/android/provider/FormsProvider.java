@@ -400,6 +400,7 @@ public class FormsProvider extends ContentProvider {
 
 	private void deleteFileOrDir(String fileName) {
 		File file = new File(fileName);
+		Log.i("File Name in provider",fileName);
 		if (file.exists()) {
 			if (file.isDirectory()) {
 				// delete any media entries for files in this directory...
@@ -436,11 +437,13 @@ public class FormsProvider extends ContentProvider {
 	 */
 	@Override
 	public int delete(Uri uri, String where, String[] whereArgs) {
+		Log.i("URI in provider",uri.toString());
 		SQLiteDatabase db = mDbHelper.getWritableDatabase();
 		int count;
 
 		switch (sUriMatcher.match(uri)) {
 		case FORMS:
+
 			Cursor del = null;
 			try {
 				del = this.query(uri, null, where, whereArgs, null);

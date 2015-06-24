@@ -81,12 +81,15 @@ public class DownloadFormsTask extends
         ArrayList<FormDetails> toDownload = values[0];
 
         int total = toDownload.size();
+        Log.i("Form Size",Integer.toString(toDownload.size()));
+        Log.i("Form Name",toDownload.get(0).formName);
         int count = 1;
     	Collect.getInstance().getActivityLogger().logAction(this, "downloadForms", String.valueOf(total));
 
         HashMap<FormDetails, String> result = new HashMap<FormDetails, String>();
 
         for (FormDetails fd : toDownload) {
+            Log.i("Form Name",fd.formName);
             publishProgress(fd.formName, Integer.valueOf(count).toString(), Integer.valueOf(total)
                     .toString());
 
@@ -145,7 +148,7 @@ public class DownloadFormsTask extends
                     }
                 } catch (IOException e) {
                     Log.e(t, e.getMessage());
-
+                    revertForms();
                     if (uriResult != null && uriResult.isNew() && fileResult.isNew())  {
                         // this means we should delete the entire form together with the metadata
                         Uri uri = uriResult.getUri();
@@ -157,7 +160,7 @@ public class DownloadFormsTask extends
                     cleanUp(fileResult, null, tempMediaPath);
                 } catch (TaskCancelledException e) {
                     Log.e(t, e.getMessage());
-
+                    revertForms();
                     cleanUp(fileResult, e.getFile(), tempMediaPath);
                 }
             } else {
@@ -169,6 +172,31 @@ public class DownloadFormsTask extends
         }
 
         return result;
+    }
+
+    private void revertForms() {
+        File tempFile = new File(Collect.TEMP_FORMS_PATH);
+        File[] fileList = tempFile.listFiles();
+        for (int i = 0; i < fileList.length; i++) {
+            File file = new File(Collect.TEMP_FORMS_PATH + File.separator + fileList[i].toString());
+            try {
+                InputStream in = new FileInputStream(file);
+                OutputStream out = new FileOutputStream(Collect.TEMP_FORMS_PATH + File.separator + file.getName());
+
+                // Transfer bytes from in to out
+                byte[] buf = new byte[1024];
+                int len;
+
+                while ((len = in.read(buf)) > 0) {
+                    out.write(buf, 0, len);
+                }
+                in.close();
+                out.close();
+            } catch (IOException e) {
+                Log.e("IO Exception", e.toString());
+            }
+
+        }
     }
 
     private void saveResult(HashMap<FormDetails, String> result, FormDetails fd, String message) {

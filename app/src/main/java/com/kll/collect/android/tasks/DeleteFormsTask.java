@@ -47,14 +47,15 @@ public class DeleteFormsTask extends AsyncTask<Long, Void, Integer> {
 		
 		// delete files from database and then from file system
 		for (int i = 0; i < params.length; i++) {
+			Log.i("What is here",Long.toString(params[i]));
 			if ( isCancelled() ) {
 				break;
 			}
 			try {
 	            Uri deleteForm =
 	                Uri.withAppendedPath(FormsColumns.CONTENT_URI, params[i].toString());
-	            
-	            int wasDeleted = cr.delete(deleteForm, null, null); 
+	            Log.i("URI",deleteForm.toString());
+	            int wasDeleted = cr.delete(deleteForm, null, null);
 	            deleted += wasDeleted;
 	            
 	            if (wasDeleted > 0) {

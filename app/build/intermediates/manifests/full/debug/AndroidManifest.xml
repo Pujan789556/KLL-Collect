@@ -17,7 +17,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="9" />
+        android:targetSdkVersion="22" />
 
     <uses-feature
         android:name="android.hardware.location"
@@ -147,6 +147,9 @@
             android:name="com.kll.collect.android.activities.FormDownloadList"
             android:label="@string/app_name" />
         <activity
+            android:name="com.kll.collect.android.activities.FormUpdateList"
+            android:label="@string/app_name" />
+        <activity
             android:name="com.kll.collect.android.activities.DataManagerList"
             android:label="@string/app_name" />
         <activity
@@ -164,6 +167,9 @@
         </activity>
         <activity
             android:name="com.kll.collect.android.activities.InstanceUploaderActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.kll.collect.android.preferences.ServerPreferenceActivity"
             android:label="@string/app_name" />
         <activity
             android:name="com.kll.collect.android.preferences.PreferencesActivity"

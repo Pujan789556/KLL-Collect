@@ -107,6 +107,7 @@ public class FormManagerList extends ListActivity implements DiskSyncListener,
                     checkAll = true;
                     for (int pos = 0; pos < FormManagerList.this.getListView().getCount(); pos++) {
                         Long id = getListAdapter().getItemId(pos);
+
                         if (!mSelected.contains(id)) {
                             mSelected.add(id);
                         }
@@ -125,7 +126,9 @@ public class FormManagerList extends ListActivity implements DiskSyncListener,
 		String[] data = new String[] { FormsColumns.DISPLAY_NAME,
 				FormsColumns.DISPLAY_SUBTEXT, FormsColumns.JR_VERSION };
 		int[] view = new int[] { R.id.text1, R.id.text2, R.id.text3 };
-
+		Log.i("Form Display Name",data[0]);
+		Log.i("Form Display SubText",data[1]);
+		Log.i("Form Version",data[2]);
 		// render total instance view
 		mInstances = new VersionHidingCursorAdapter(FormsColumns.JR_VERSION, this,
 				R.layout.two_item_multiple_choice, c, data, view);
@@ -257,11 +260,15 @@ public class FormManagerList extends ListActivity implements DiskSyncListener,
 	 */
 	private void deleteSelectedForms() {
 		// only start if no other task is running
+		for(int x = 0;x<mSelected.size();x++){
+			Log.i("Selected",Long.toString(mSelected.get(x)));
+		}
 		if (mBackgroundTasks.mDeleteFormsTask == null) {
 			mBackgroundTasks.mDeleteFormsTask = new DeleteFormsTask();
 			mBackgroundTasks.mDeleteFormsTask
 					.setContentResolver(getContentResolver());
 			mBackgroundTasks.mDeleteFormsTask.setDeleteListener(this);
+
 			mBackgroundTasks.mDeleteFormsTask.execute(mSelected
 					.toArray(new Long[mSelected.size()]));
 		} else {

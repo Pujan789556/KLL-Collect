@@ -123,22 +123,25 @@
 				        android:layout_height="wrap_content"
 				        android:layout_weight="50"
 				        android:gravity="center" >
-				
-				        <ImageButton
-				            android:id="@+id/geoodk_map_butt"
-				            android:layout_width="100dp"
-				            android:layout_height="100dp"
-				            android:background="@drawable/state_color"
-				            android:src="@drawable/map_data" >
-				        </ImageButton>
-				
-				        <TextView
-				            android:layout_width="wrap_content"
-				            android:layout_height="wrap_content"
-				            android:layout_below="@+id/geoodk_map_butt"
-				            android:layout_marginLeft="20dp"
-				            android:clickable="false"
-				            android:text="Map Data" />
+
+						<ImageButton
+							android:id="@+id/geoodk_get_survey_butt"
+							android:layout_width="100dp"
+							android:layout_height="100dp"
+							android:background="@drawable/state_color"
+							android:src="@drawable/ic_update_form"
+							android:gravity="center_horizontal"  >
+						</ImageButton>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/geoodk_get_survey_butt"
+							android:clickable="false"
+							android:layout_marginLeft="15dp"
+							android:text="Get Survey"
+							android:gravity="center_horizontal"/>
+
 				    </RelativeLayout>
 		    	</LinearLayout>
 		    	<LinearLayout
@@ -201,4 +204,4 @@
 </ScrollView>
 
 </LinearLayout>
-<!-- From: file:/home/nirab/Android/collect/app/src/main/res/layout/geoodk_layout.xml -->
+<!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/layout/geoodk_layout.xml -->

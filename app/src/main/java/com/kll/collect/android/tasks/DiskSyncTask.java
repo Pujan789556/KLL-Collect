@@ -28,6 +28,8 @@ import com.kll.collect.android.listeners.DiskSyncListener;
 import com.kll.collect.android.provider.FormsProviderAPI.FormsColumns;
 import com.kll.collect.android.utilities.FileUtils;
 
+import android.app.ListActivity;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -45,6 +47,8 @@ public class DiskSyncTask extends AsyncTask<Void, String, String> {
     private final static String t = "DiskSyncTask";
 
     private static int counter = 0;
+
+	private ContentResolver cr;
 
     int instance;
     
@@ -128,6 +132,21 @@ public class DiskSyncTask extends AsyncTask<Void, String, String> {
 		                        uriToUpdate.add(new UriFile(updateUri, sqlFile));
 		                    }
 		                } else {
+							String id = mCursor.getString(mCursor.getColumnIndex(FormsColumns._ID));
+							try {
+
+								Uri deleteForm =
+										Uri.withAppendedPath(FormsColumns.CONTENT_URI, id);
+								Log.i("URI", deleteForm.toString());
+								int wasDeleted = Collect.getInstance().getContentResolver().delete(deleteForm, null, null);
+
+
+								if (wasDeleted > 0) {
+									Collect.getInstance().getActivityLogger().logAction(this, "delete", deleteForm.toString());
+								}
+							} catch ( Exception ex ) {
+								Log.e(t,"Exception during delete of: " + id + " exception: "  + ex.toString());
+							}
 		                	Log.w(t, "["+instance+"] file referenced by content provider does not exist " + sqlFile);
 		                }
 		            }
@@ -308,5 +327,8 @@ public class DiskSyncTask extends AsyncTask<Void, String, String> {
             mListener.SyncComplete(result);
         }
     }
+	public void setContentResolver(ContentResolver resolver){
+		cr = resolver;
+	}
 
 }

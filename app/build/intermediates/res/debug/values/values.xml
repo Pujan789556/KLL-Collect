@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="basemap_entries">
 		<item>MAPQUESTOSM</item>
@@ -28,7 +28,7 @@
 		<item>17</item>
 		<item>13</item>
 	</string-array>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/main_settings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/main_settings.xml -->
     <eat-comment/>
     <string-array name="main_settings">
         <item>Form Management</item>
@@ -36,7 +36,7 @@
         <item>Admin Settings</item>
         <item>Map Settings</item>
     </string-array>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="navigation_entries">
 		<item>@string/swipe_navigation</item>
@@ -62,7 +62,7 @@
         <item>seconds</item>
 		<item>minutes</item>
     </string-array>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_colors.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_colors.xml -->
     <eat-comment/>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_signin_btn_dark_text_default">@android:color/white</color>
@@ -74,7 +74,7 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_colors.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
@@ -93,24 +93,24 @@
     <declare-styleable name="MapAttrs"><attr format="enum" name="mapType"><enum name="none" value="0"/><enum name="normal" value="1"/><enum name="satellite" value="2"/><enum name="terrain" value="3"/><enum name="hybrid" value="4"/></attr><attr format="float" name="cameraBearing"/><attr format="float" name="cameraTargetLat"/><attr format="float" name="cameraTargetLng"/><attr format="float" name="cameraTilt"/><attr format="float" name="cameraZoom"/><attr format="boolean" name="uiCompass"/><attr format="boolean" name="uiRotateGestures"/><attr format="boolean" name="uiScrollGestures"/><attr format="boolean" name="uiTiltGestures"/><attr format="boolean" name="uiZoomControls"/><attr format="boolean" name="uiZoomGestures"/><attr format="boolean" name="useViewLifecycle"/><attr format="boolean" name="zOrderOnTop"/></declare-styleable>
     <declare-styleable name="WalletFragmentOptions"><attr format="enum" name="appTheme"><enum name="holo_dark" value="0"/><enum name="holo_light" value="1"/></attr><attr format="enum" name="environment"><enum name="production" value="1"/><enum name="sandbox" value="0"/><enum name="strict_sandbox" value="2"/></attr><attr format="reference" name="fragmentStyle"/><attr format="enum" name="fragmentMode"><enum name="buyButton" value="1"/><enum name="selectionDetails" value="2"/></attr></declare-styleable>
     <declare-styleable name="WalletFragmentStyle"><attr format="dimension" name="buyButtonHeight"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="dimension" name="buyButtonWidth"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="enum" name="buyButtonText"><enum name="buy_with_google" value="1"/><enum name="buy_now" value="2"/><enum name="book_now" value="3"/></attr><attr format="enum" name="buyButtonAppearance"><enum name="classic" value="1"/><enum name="grayscale" value="2"/><enum name="monochrome" value="3"/></attr><attr format="reference" name="maskedWalletDetailsTextAppearance"/><attr format="reference" name="maskedWalletDetailsHeaderTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsBackground"/><attr format="reference" name="maskedWalletDetailsButtonTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsButtonBackground"/><attr format="color" name="maskedWalletDetailsLogoTextColor"/><attr format="enum" name="maskedWalletDetailsLogoImageType"><enum name="classic" value="1"/><enum name="monochrome" value="2"/></attr></declare-styleable>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <drawable name="black">#ff000000</drawable>
     <drawable name="white">#ffffffff</drawable>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <item name="mapview" type="id"/>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/version.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">6171000</integer>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="accept_bearing">Record Bearing</string>
     <string name="accept_location">Record Location</string>
@@ -132,11 +132,11 @@
     <string name="admin_preferences">Admin Settings</string>
     <string name="advance">forward to\nnext\nprompt</string>
     <string name="altitude">Altitude</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <string name="app_name" translatable="false">KLL Collect</string>
     <string name="app_name_long" translatable="false">KLL Collect</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_url">http://kathmandulivinglabs.org</string>
     <string name="audio_file_error">No audio file was specified.</string>
@@ -181,7 +181,7 @@
     <string name="clearanswer_confirm">Remove the response to \"%s\"?</string>
     <string name="click_to_web">Tap to visit http://openstreetmap.org</string>
     <string name="client">User Interface</string>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text">An application requires an update to the Android Wear app.</string>
     <string name="common_android_wear_update_text">This app won\'t run unless you update the Android Wear app.</string>
@@ -211,39 +211,39 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="completed_data">Complete (%s)</string>
     <string name="constraint_behavior">Constraint processing behavior</string>
     <string name="constraint_behavior_on_finalize">Defer validation until finalized</string>
     <string name="constraint_behavior_on_swipe">Validate upon forward swipe</string>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="data">Saved Forms</string>
     <string name="data_saved_error">Sorry, form save failed!</string>
     <string name="data_saved_ok">Form successfully saved!</string>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="decline">Decline</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="default_completed">Default to finalized</string>
     <string name="default_completed_summary">Mark form as finalized by default</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <string name="default_odk_formlist" translatable="false">/formList</string>
     <string name="default_odk_submission" translatable="false">/submission</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="default_oflinelayers_url">OfflineLayers</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <string name="default_server_url" translatable="false">http://ona.io/nea6754</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="default_splash_path">GeoODK Default</string>
     <string name="delete_confirm">Delete %s form(s)?</string>
@@ -308,6 +308,7 @@
     <string name="form_download_progress">%1$s. Getting media files: %2$s of %3$s</string>
     <string name="form_forward">Next</string>
     <string name="form_scan_starting">Scanning for forms…</string>
+    <string name="form_upto_date">No Form to update. Form upto date</string>
     <string name="formlist_url">Form list path</string>
     <string name="forms">Blank Forms</string>
     <string name="found_at_end">Uncheck to hide from end of Form Entry</string>
@@ -383,12 +384,12 @@
     <string name="please_wait">Please wait a few moments.</string>
     <string name="please_wait_long">Please wait. This could take a few minutes.</string>
     <string name="protocol">Platform</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/untranslated.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/untranslated.xml -->
     <eat-comment/>
     <string name="protocol_google" translatable="false">google</string>
     <string name="protocol_odk_default" translatable="false">odk_default</string>
     <string name="protocol_other" translatable="false"/>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="provider_disabled_error">Sorry, Location providers are disabled!</string>
     <string name="quit_application">Exit %s</string>
@@ -445,11 +446,11 @@
     <string name="show_unsent_forms">Show Unsent Forms</string>
     <string name="sign_button">Gather Signature</string>
     <string name="splash_path">Selected splash image</string>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="submission_url">Submission path</string>
     <string name="success">Success</string>
@@ -488,13 +489,13 @@
     <string name="view_hierarchy">Go To Prompt</string>
     <string name="view_shape">Edit Shape</string>
     <string name="view_trace">View GeoTrace</string>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="xform_parse_error">XForm parse error. %1$s is missing element %2$s</string>
-    <!-- From: file:/home/nirab/Android/collect/app/src/main/res/values/theme.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/src/main/res/values/theme.xml -->
     <eat-comment/>
     <style name="Collect" parent="android:Theme.Light">
 	    <item name="android:scrollbarThumbHorizontal">@+drawable/thumb</item>
@@ -503,7 +504,7 @@
 	    <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
 	    <item name="android:fadeScrollbars">false</item>
 	</style>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_iap_style.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_iap_style.xml -->
     <eat-comment/>
     <style name="Theme.IAPTheme" parent="android:Theme">
     <item name="android:windowIsTranslucent">true</item>
@@ -513,7 +514,7 @@
     <item name="android:windowIsFloating">true</item>
     <item name="android:backgroundDimEnabled">false</item>
   </style>
-    <!-- From: file:/home/nirab/Android/collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_styles.xml -->
+    <!-- From: file:/D:/pp/KLL/KLLCollect/KLL-Collect/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_styles.xml -->
     <eat-comment/>
     <style name="WalletFragmentDefaultButtonTextAppearance">
         <item name="android:textColor">@color/wallet_primary_text_holo_light</item>

@@ -159,6 +159,7 @@
     <string name="app_url">http://kathmandulivinglabs.org</string>
     <string name="keep_changes">Save Changes</string>
     <string name="go_to_location">Go to Location</string>
+    <string name="form_upto_date">No Form to update. Form upto date</string>
     <string name="change_formlist_url">Form list path (appended to URL)</string>
     <string name="protocol">Platform</string>
     <string name="change_protocol">Platform</string>
